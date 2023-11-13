@@ -6,7 +6,6 @@
   "dependencies": {
     "@react-pdf/renderer": "^3.1.14",
     "@tanstack/match-sorter-utils": "^8.8.4",
-    "@tanstack/react-table": "^8.9.1",
     "@types/node": "^18.7.14",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
@@ -20,7 +19,7 @@
     "react-firebase-hooks": "^5.0.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
-    "react-textarea-autosize": "^8.3.4",
+    "react-textarea-autosize": "^8.5.3",
     "tabler-icons-react": "^1.54.0",
     "typescript": "^4.8.2"
   },
@@ -50,8 +49,8 @@
   "devDependencies": {
     "@types/date-fns": "^2.6.0",
     "@types/rc-slider": "^8.6.5",
-    "@types/react-datepicker": "^3.1.1",
-    "@types/react-textarea-autosize": "^4.3.5",
+    "@types/react-datepicker": "^4.19.3",
+    "@types/react-textarea-autosize": "^8.0.0",
     "gh-pages": "^3.1.0",
     "node-sass": "^9.0.0"
   }
