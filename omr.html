@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/vcr-osd-mono" />
+  <title>My Website</title>
+  <style>
+    body {
+      font-family: 'VCR OSD Mono';
+      color: #000;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    .bill {
+      width: 200px;
+      box-shadow: 0 0 3px #aaa;
+      padding: 10px 10px;
+      box-sizing: border-box;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table .header {
+      border-top: 2px dashed #000;
+      border-bottom: 2px dashed #000;
+    }
+
+    .table {
+      text-align: left;
+    }
+
+    .table .total td:first-of-type {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .table .total td {
+      border-top: 2px dashed #000;
+      border-bottom: 2px dashed #000;
+    }
+
+    .table .net-amount td:first-of-type {
+      border-top: none;
+    }
+
+    .table .net-amount td {
+      border-top: 2px dashed #000;
+    }
+
+    .table .net-amount {
+      border-bottom: 2px dashed #000;
+    }
+
+    @media print {
+
+      .hidden-print,
+      .hidden-print * {
+        display: none !important;
+      }
+    }
+  </style>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <main>
+    <div class="bill">
+      <div class="brand">
+        Top In Town Retailers Pvt Ltd
+      </div>
+      <div class="address">
+        FLoor 2 Building No 34 India <br> Phone No- 0192083910
+      </div>
+      <div class="shop-details">
+        PAN: AAKPS9298A TIN: 09820163701
+      </div>
+      <div>RETAIL INVOICE </div>
+      <div class="bill-details">
+        <div class="flex justify-between">
+          <div>BILL NO: 091</div>
+          <div>TABLE NO: 091</div>
+        </div>
+        <div class="flex justify-between">
+          <div>BILL DATE: 10/Mar/2022</div>
+          <div>TIME: 14:10</div>
+        </div>
+      </div>
+      <table class="table">
+        <tr class="header">
+          <th>
+            Particulars
+          </th>
+          <th>
+            Rate
+          </th>
+          <th>
+            Qty
+          </th>
+          <th>
+            Amount
+          </th>
+        </tr>
+        <tr>
+          <td>Head and Shoulder</td>
+          <td>100</td>
+          <td>2</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>Britania</td>
+          <td>25</td>
+          <td>2</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Tomatoes</td>
+          <td>40</td>
+          <td>1</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>Chocolates</td>
+          <td>5</td>
+          <td>12</td>
+          <td>60</td>
+        </tr>
+        <tr class="total">
+          <td></td>
+          <td>Total</td>
+          <td>17</td>
+          <td>350</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>CGST</td>
+          <td>5%</td>
+          <td>17.5</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>SGST</td>
+          <td>5%</td>
+          <td>17.5</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>RND-Off</td>
+          <td>0</td>
+          <td>17.5</td>
+        </tr>
+        <tr class="net-amount">
+          <td></td>
+          <td>Net Amnt</td>
+          <td></td>
+          <td>385</td>
+        </tr>
+      </table>
+      Payment Method:Card<br>
+      Transaction ID: 082098082783
+      <br>Username: Pradeep [Biller] <br>
+      Thank You ! Please visit again
+    </div>
+</body>
+
+</html>
