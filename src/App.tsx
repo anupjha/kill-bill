@@ -1,5 +1,8 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InvoicePage from "./pages/InvoicePage";
+import T2InvoicePage from "./pages/T2InvoicePage";
+import NoMatch from "./pages/NoMatch";
 import Navbar from "./components/Navbar";
 import { Invoice } from "./data/types";
 
@@ -19,21 +22,16 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
-      <InvoicePage data={data} onChange={onInvoiceUpdated} />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<InvoicePage data={data} onChange={onInvoiceUpdated} />} />
+          <Route path="/t2" element={<T2InvoicePage />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
 export default App;
-
-// import { HashRouter as Router,Routes, Route } from "react-router-dom";
-// {
-//   /* <Router>
-// <Routes>
-//   <Route path="/login" element={<LoginScreen />} />
-//   <Route path="/" element={<HomeScreen />} />
-//   <Route path="/invoice/:invoiceid" element={<InvoiceScreen />} />
-// </Routes>
-// </Router> */
-// }

@@ -1,28 +1,30 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <>
       <nav role="navigation" className="primary-navigation">
         <ul>
           <li>
-            <a href="/">Home (A4)</a>
+            <Link to="/">Home (A4)</Link>
           </li>
           <li>
-            <a href="/">A4-X</a>
+            <Link to="/a4x">A4-X</Link>
           </li>
           <li>
-            <a href="/a3">A3</a>
+            <Link to="/a3">A3</Link>
           </li>
           <li>
-            <a href="/a3">A3-L</a>
+            <Link to="/a3l">A3-L</Link>
           </li>
           <li>
-            <a href="/a2">A2</a>
+            <Link to="/a2">A2</Link>
           </li>
           <li>
-            <a href="/t2">T2</a>
+            <Link to="/t2">T2</Link>
           </li>
           <li>
-            <a href="/t2">T4</a>
+            <Link to="/t4">T4</Link>
           </li>
         </ul>
       </nav>
