@@ -1,5 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
-import { Invoice, ProductLine } from "../data/types";
+import React, { useState, useEffect } from "react";
 import { initialInvoice, initialProductLine } from "../data/initialData";
 import countryList from "../data/countryList";
 import EditableInput from "../components/EditableInput";
@@ -27,16 +26,10 @@ Font.register({
   ],
 });
 
-interface Props {
-  data?: Invoice;
-  pdfMode?: boolean;
-  onChange?: (invoice: Invoice) => void;
-}
-
-const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
-  const [invoice, setInvoice] = useState<Invoice>(data ? { ...data } : { ...initialInvoice });
-  const [subTotal, setSubTotal] = useState<number>();
-  const [saleTax, setSaleTax] = useState<number>();
+const InvoicePage = ({ data, pdfMode, onChange }) => {
+  const [invoice, setInvoice] = useState(data ? { ...data } : { ...initialInvoice });
+  const [subTotal, setSubTotal] = useState();
+  const [saleTax, setSaleTax] = useState();
 
   const dateFormat = "MMM dd, yyyy";
   const invoiceDate = invoice.invoiceDate !== "" ? new Date(invoice.invoiceDate) : new Date();
@@ -47,7 +40,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
     invoiceDueDate.setDate(invoiceDueDate.getDate() + 30);
   }
 
-  const handleChange = (name: keyof Invoice, value: string | number) => {
+  const handleChange = (name, value) => {
     if (name !== "productLines") {
       const newInvoice = { ...invoice };
 
@@ -61,7 +54,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
     }
   };
 
-  const handleProductLineChange = (index: number, name: keyof ProductLine, value: string) => {
+  const handleProductLineChange = (index, name, value) => {
     const productLines = invoice.productLines.map((productLine, i) => {
       if (i === index) {
         const newProductLine = { ...productLine };
@@ -87,7 +80,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
     setInvoice({ ...invoice, productLines });
   };
 
-  const handleRemove = (i: number) => {
+  const handleRemove = (i) => {
     const productLines = invoice.productLines.filter((productLine, index) => index !== i);
 
     setInvoice({ ...invoice, productLines });
@@ -99,7 +92,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
     setInvoice({ ...invoice, productLines });
   };
 
-  const calculateAmount = (quantity: string, rate: string) => {
+  const calculateAmount = (quantity, rate) => {
     const quantityNumber = parseFloat(quantity);
     const rateNumber = parseFloat(rate);
     const amount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0;

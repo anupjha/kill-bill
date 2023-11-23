@@ -1,4 +1,4 @@
-export default function T2InvoicePage() {
+const T2Page = () => {
   return (
     <>
       <div className="bill">
@@ -83,4 +83,6 @@ export default function T2InvoicePage() {
       ;
     </>
   );
-}
+};
+
+export default T2Page;

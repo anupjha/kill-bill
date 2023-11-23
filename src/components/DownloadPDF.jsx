@@ -1,14 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { Invoice } from "../data/types";
 import InvoicePage from "../pages/InvoicePage";
 
-interface Props {
-  data: Invoice;
-}
-
-const Download: FC<Props> = ({ data }) => {
-  const [show, setShow] = useState<boolean>(false);
+const Download = ({ data }) => {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     setShow(false);

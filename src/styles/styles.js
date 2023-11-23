@@ -1,11 +1,9 @@
-import { CSSClasses } from "../data/types";
-
 const colorDark = "#222";
 const colorDark2 = "#666";
 const colorGray = "#f4f4f4";
 const colorWhite = "#fff";
 
-const styles: CSSClasses = {
+const styles = {
   dark: {
     color: colorDark,
   },

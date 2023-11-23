@@ -1,12 +1,10 @@
-import { ProductLine, Invoice } from "./types";
-
-export const initialProductLine: ProductLine = {
+export const initialProductLine = {
   description: "",
   quantity: "1",
   rate: "0.00",
 };
 
-export const initialInvoice: Invoice = {
+export const initialInvoice = {
   logo: "",
   logoWidth: 100,
   title: "TAX INVOICE",
